@@ -1,5 +1,8 @@
-# desafio-DIO
+# doc-DIO
 
-Apenas repo das respostas dos desafios da Digital Innovation One
+Apenas umas notas de estudos com o que estou aprendendo na Digital Innovation One.
 
-Dividos por bootcamps
+Dividos por bootcamps e contém:
+  - Notas de estudos (Por módulo)
+  - Resumos
+  - Respostas dos desafios
