@@ -38,6 +38,9 @@ namespace ExemploPOO
 
             c.ExibirSaldo();
 
+            Computador comp = new Computador();
+            Console.WriteLine(comp.ToString());
+
     
             // //Valores válidos
             // Retangulo r = new Retangulo();
