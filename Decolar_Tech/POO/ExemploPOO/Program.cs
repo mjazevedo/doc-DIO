@@ -7,7 +7,12 @@ namespace ExemploPOO
     {
         static void Main(string[] args)
         {
-            
+            Pessoa pe1 = new Pessoa();
+            pe1.Nome = "André";
+            pe1.Idade = 23;
+
+            pe1.Apresentar();
+
             Aluno a1 = new Aluno();
             a1.Nome = "João Marques";
             a1.Idade = 19;
