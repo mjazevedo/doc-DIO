@@ -33,6 +33,11 @@ namespace ExemploPOO
             System.Console.WriteLine("Resultado da primeira soma: " + calc.Somar(4, 10));
             System.Console.WriteLine("Resultado da segunda soma: " + calc.Somar(4, 10, 10));
 
+            Corrente c = new Corrente();
+            c.Creditar(300);
+
+            c.ExibirSaldo();
+
     
             // //Valores válidos
             // Retangulo r = new Retangulo();
