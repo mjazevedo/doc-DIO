@@ -13,6 +13,7 @@ namespace ExemploPOO
 
             pe1.Apresentar();
 
+            //Exemplo Polimorfismo em tempo de execução
             Aluno a1 = new Aluno();
             a1.Nome = "João Marques";
             a1.Idade = 19;
@@ -26,18 +27,22 @@ namespace ExemploPOO
             p1.Idade = 38;
 
             p1.Apresentar();
+            
+            //Exemplo de polimorfismo em tempo de compilação
+            Calculadora calc = new Calculadora();
+            System.Console.WriteLine("Resultado da primeira soma: " + calc.Somar(4, 10));
+            System.Console.WriteLine("Resultado da segunda soma: " + calc.Somar(4, 10, 10));
 
-            // Valores válidos
+    
+            // //Valores válidos
             // Retangulo r = new Retangulo();
             // r.DefinirMedidas(30,20);
             // System.Console.WriteLine($"Área = {r.ObterArea()}");
 
-            //Valores inválidos
+            // //Valores inválidos
             // Retangulo r2 = new Retangulo();
             // r2.DefinirMedidas(0,0);
             // System.Console.WriteLine($"Área = {r2.ObterArea()}");
-
-
 
             // Pessoa p1 = new Pessoa();
             // p1.Nome = "Matheus";
