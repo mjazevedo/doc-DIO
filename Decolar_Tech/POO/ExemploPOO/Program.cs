@@ -1,4 +1,5 @@
 ﻿using System;
+using ExemploPOO.Interfaces;
 using ExemploPOO.Models;
 
 namespace ExemploPOO
@@ -41,6 +42,10 @@ namespace ExemploPOO
             Computador comp = new Computador();
             Console.WriteLine(comp.ToString());
 
+            ICalculadora calc2 = new Calculadora();
+            System.Console.WriteLine(calc2.Somar(2,2));
+            System.Console.WriteLine(calc2.Multiplicar(8,99));
+            System.Console.WriteLine(calc2.Subtrair(90,77));
     
             // //Valores válidos
             // Retangulo r = new Retangulo();
