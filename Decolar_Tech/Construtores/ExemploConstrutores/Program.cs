@@ -5,6 +5,7 @@ namespace ExemploConstrutores
 {
     class Program
     {
+        public delegate void Operacao(int a, int b);
         static void Main(string[] args)
         {
             Aluno p1 = new Aluno("José", "Alves", "Matemática");
@@ -31,6 +32,18 @@ namespace ExemploConstrutores
 
             data.Mes = 10;
             System.Console.WriteLine(data.Mes);
+
+            const double pi = 3.14;
+            System.Console.WriteLine(pi);
+
+            Operacao op = new Operacao(Calculadora.Somar);
+            //Operacao op = Calculadora.Somar;
+            op += Calculadora.Subtrair; // Ordem FIFO - Multi Cast Delegate 
+
+            op.Invoke(20,15);
+            
+            //op(30,90)
+            
         }
     }
 }

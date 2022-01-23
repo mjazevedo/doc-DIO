@@ -2,14 +2,16 @@ namespace ExemploConstrutores.Models
 {
     public class Pessoa
     {
-        public string Nome;
-        public string SobreNome;
+        // public string Nome;
+        // public string SobreNome;
+        public readonly string Nome;
+        public readonly string SobreNome;
 
-        // public Pessoa()
-        // {
-        //     Nome = string.Empty;
-        //     SobreNome = string.Empty;
-        // }
+        public Pessoa()
+        {
+            Nome = string.Empty;
+            SobreNome = string.Empty;
+        }
 
         public Pessoa(string nome, string sobrenome)
         {
