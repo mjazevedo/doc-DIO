@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using ExemploPOO.helper;
 using ExemploPOO.Interfaces;
 using ExemploPOO.Models;
 
@@ -46,7 +49,40 @@ namespace ExemploPOO
             System.Console.WriteLine(calc2.Somar(2,2));
             System.Console.WriteLine(calc2.Multiplicar(8,99));
             System.Console.WriteLine(calc2.Subtrair(90,77));
-    
+
+            var caminho = "C:\\TrabalhandoComArquivos";
+            var caminhoPathCombine = Path.Combine(caminho, "Pasta Teste 1");
+            var caminhoArquivo = Path.Combine(caminho, "arquivo-teste.txt");
+            var caminhoArquivoTeste = Path.Combine(caminho, "arquivo-teste.txt");
+            var caminhoArquivoTesteCopia = Path.Combine(caminho, "arquivo-teste-bckp.txt");
+            var novoCaminhoArquivo = Path.Combine(caminho, "Pasta Teste 2", "arquivo-teste-stream.txt");
+
+            var listaString = new List<string> {"Linha 1", "Linha 2", "Linha 3"};
+            var listaStringConitinuacao = new List<string> {"Linha 4", "Linha 5", "Linha 6"};
+
+
+            FileHelper helper = new FileHelper();
+            //helper.ListarDiretorios(caminho);
+            //helper.ListarArquivos(caminho);
+
+            // System.Console.WriteLine("Criando diretório: " + caminhoPathCombine);
+            // helper.CriarDiretorio(Path.Combine(caminhoPathCombine));
+
+            //helper.ApagarDiretorio(caminhoPathCombine, true);
+
+            //helper.CriarArquivoTexto(caminhoArquivo, "Olá! Testando escrita no arquivo");
+
+            // helper.CriarArquivoTextoStream(caminhoArquivo, listaString);
+            // helper.AdicionarTextoStream(caminhoArquivo, listaStringConitinuacao);
+
+            //helper.LerArquivoStream(caminhoArquivo);
+
+            //helper.MoverArquivo(caminhoArquivo, novoCaminhoArquivo, false);
+
+            //helper.CopiarArquivoStream(caminhoArquivoTeste, caminhoArquivoTesteCopia, false);
+
+            helper.DeletarArquivo(caminhoArquivoTesteCopia);
+
             // //Valores válidos
             // Retangulo r = new Retangulo();
             // r.DefinirMedidas(30,20);
