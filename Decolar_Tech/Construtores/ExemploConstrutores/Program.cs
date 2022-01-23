@@ -43,6 +43,9 @@ namespace ExemploConstrutores
             op.Invoke(20,15);
             
             //op(30,90)
+
+            Matematica mat = new Matematica(10, 80);
+            mat.Somar();
             
         }
     }
