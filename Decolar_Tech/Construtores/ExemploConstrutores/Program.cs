@@ -22,6 +22,15 @@ namespace ExemploConstrutores
 
             Log log2 = Log.GetInstance();
             System.Console.WriteLine(log.propLog);
+
+            Data data = new Data();
+            data.SetMes(12);
+            data.SetMes(65);
+
+            data.ApresentarMes();
+
+            data.Mes = 10;
+            System.Console.WriteLine(data.Mes);
         }
     }
 }
