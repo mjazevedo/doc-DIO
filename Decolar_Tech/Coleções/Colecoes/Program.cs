@@ -1,4 +1,5 @@
 ﻿using System;
+using Colecoes.Helper;
 
 namespace Colecoes
 {
@@ -42,7 +43,76 @@ namespace Colecoes
                     System.Console.WriteLine(mat[i,j]);
                 }
             }
-            
+
+            OperacoesArray op = new OperacoesArray();
+            int[] array  = new int[5] {6, 3, 8, 1, 9};
+            int[] arrCopy = new int[10];
+
+            int valorProcurado = 9;
+            bool existe = op.Existe(array, valorProcurado);
+
+            if (existe)
+            {
+                System.Console.WriteLine("Encontrei o valor");
+            }
+            else
+            {
+                System.Console.WriteLine("Não encontrei o valor");
+            }
+
+            System.Console.WriteLine("Array Original:");
+            op.ImprimirArray(array);
+
+            //op.OrdenarBubbleSort(ref array); // Fazendo manualmente
+            //op.Ordenar(ref array); // Método Sort c# 
+
+            System.Console.WriteLine("Array Ordenado:");
+            op.ImprimirArray(array);
+
+            System.Console.WriteLine("Array antes da cópia");
+            op.ImprimirArray(arrCopy);
+
+            op.Copiar(ref array, ref arrCopy);
+            System.Console.WriteLine("Array após a cópia:");            
+            op.ImprimirArray(arrCopy);
+
+            bool TodosMaiorQue = op.TodosMaiorQue(array, valorProcurado);
+            if(TodosMaiorQue)
+            {
+                System.Console.WriteLine("Todos os valores são maiores que {0}", valorProcurado);
+            }
+            else
+            {
+                System.Console.WriteLine("Existe valores que não são maiores do que {0}", valorProcurado);
+            }
+
+            int valorAchado = op.ObterValor(array, valorProcurado);
+            if(valorAchado > 0)
+            {
+                System.Console.WriteLine("Encontrei o valor");
+            }
+            else
+            {
+                System.Console.WriteLine("Não encontrei o valor");
+            }
+
+            int Indice = op.Obterindice(array, valorProcurado);
+
+            if(Indice > -1)
+            {
+                System.Console.WriteLine("O índice do elemento {0} é: {1}", valorProcurado, Indice);
+            }
+            else
+            {
+                System.Console.WriteLine("Valor não existente no array");
+            }
+
+            System.Console.WriteLine("Capacidade atual do array: {0}", array.Length);
+
+            op.RedimensionarArray(ref array, array.Length * 2);
+            System.Console.WriteLine("Capacidade atual do array após redimensionar: {0}", array.Length);
+
+            string[] arrayStr = op.ConverterParaArrayString(array);
         }
     }
 }
