@@ -10,35 +10,78 @@ namespace Colecoes
         static void Main(string[] args)
         {
 
-            Queue<string> fila = new Queue<string>();
+            Dictionary<string, string> estados = new Dictionary<string, string>();
 
-            fila.Enqueue("Leonardo");
-            fila.Enqueue("Eduardo");
-            fila.Enqueue("André");
+            estados.Add("SP", "São Paulo");
+            estados.Add("MG", "Minas Gerais");
+            estados.Add("BA", "Bahia");
+            //estados.Add("MG", "");
 
-            while(fila.Count > 0)
+            // foreach (KeyValuePair<string, string> item in estados)
+            // {
+            //     System.Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+            // }
+
+            // System.Console.WriteLine("Removendo o valor");
+
+            // string valueProcurado = "MG";
+            // estados.Remove(valueProcurado);
+
+            // foreach (KeyValuePair<string, string> item in estados)
+            // {
+            //     System.Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+            // }
+
+            string valorProcurado = "BA";
+
+            // System.Console.WriteLine("Valor original:");
+            // System.Console.WriteLine(estados[valorProcurado]);
+
+            // estados[valorProcurado] = "BA - Teste atualização";
+            // System.Console.WriteLine("Valor Atualizado:");
+
+            // System.Console.WriteLine(estados[valorProcurado]);
+
+            // var teste = estados["SC"];
+
+            if(estados.TryGetValue(valorProcurado, out string estadoEncontrado))
             {
-                System.Console.WriteLine($"Vez de: {fila.Peek()}");
-                System.Console.WriteLine($"{fila.Dequeue()} atendido");
+                System.Console.WriteLine(estadoEncontrado);
+            }
+            else
+            {
+                System.Console.WriteLine($"Chave {valorProcurado} não existe no dicionário");
             }
 
-            System.Console.WriteLine($"Pessoas na fila: {fila.Count}");
+            // Queue<string> fila = new Queue<string>();
+
+            // fila.Enqueue("Leonardo");
+            // fila.Enqueue("Eduardo");
+            // fila.Enqueue("André");
+
+            // while(fila.Count > 0)
+            // {
+            //     System.Console.WriteLine($"Vez de: {fila.Peek()}");
+            //     System.Console.WriteLine($"{fila.Dequeue()} atendido");
+            // }
+
+            // System.Console.WriteLine($"Pessoas na fila: {fila.Count}");
 
 
-            Stack<string> pilhaLivros = new Stack<string>();
+            // Stack<string> pilhaLivros = new Stack<string>();
 
-            pilhaLivros.Push(".NET");
-            pilhaLivros.Push("DDD");
-            pilhaLivros.Push("Código Limpo");
+            // pilhaLivros.Push(".NET");
+            // pilhaLivros.Push("DDD");
+            // pilhaLivros.Push("Código Limpo");
 
-            while(pilhaLivros.Count > 0)
-            {
-                System.Console.WriteLine($"Próximo livro para a leitura: {pilhaLivros.Peek()}");
-                System.Console.WriteLine($"{pilhaLivros.Pop()} lido com sucesso!");
-                System.Console.WriteLine($"Livros para a leitura: {pilhaLivros.Count}");
-            }
+            // while(pilhaLivros.Count > 0)
+            // {
+            //     System.Console.WriteLine($"Próximo livro para a leitura: {pilhaLivros.Peek()}");
+            //     System.Console.WriteLine($"{pilhaLivros.Pop()} lido com sucesso!");
+            //     System.Console.WriteLine($"Livros para a leitura: {pilhaLivros.Count}");
+            // }
 
-                System.Console.WriteLine($"Livros para a leitura: {pilhaLivros.Count}");
+            //     System.Console.WriteLine($"Livros para a leitura: {pilhaLivros.Count}");
 
             // OperacoesLista opList = new OperacoesLista();
             // List<string> estado = new List<string> {"SP", "MG", "BA"};
