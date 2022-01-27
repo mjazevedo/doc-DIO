@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Colecoes.Helper;
 
@@ -9,23 +10,53 @@ namespace Colecoes
         static void Main(string[] args)
         {
 
-            OperacoesLista opList = new OperacoesLista();
-            List<string> estado = new List<string> {"SP", "MG", "BA"};
-            string[] estadoArr = new string[2] {"SC", "MT"};
+            Queue<string> fila = new Queue<string>();
 
-            // estado.Add("SP");
-            // estado.Add("MG");
-            // estado.Add("BA");
+            fila.Enqueue("Leonardo");
+            fila.Enqueue("Eduardo");
+            fila.Enqueue("André");
 
-            System.Console.WriteLine("Quantidade de elementos da lista: {0}", estado.Count);
+            while(fila.Count > 0)
+            {
+                System.Console.WriteLine($"Vez de: {fila.Peek()}");
+                System.Console.WriteLine($"{fila.Dequeue()} atendido");
+            }
 
-            opList.ImprimirListStr(estado);
-            // System.Console.WriteLine("Removendo o elemento:");
-            // estado.Remove("MG");
+            System.Console.WriteLine($"Pessoas na fila: {fila.Count}");
 
-            // estado.AddRange(estadoArr); // Adiciona Elementos no final da coleção
-            estado.Insert(1, "RJ");
-            opList.ImprimirListStr(estado);
+
+            Stack<string> pilhaLivros = new Stack<string>();
+
+            pilhaLivros.Push(".NET");
+            pilhaLivros.Push("DDD");
+            pilhaLivros.Push("Código Limpo");
+
+            while(pilhaLivros.Count > 0)
+            {
+                System.Console.WriteLine($"Próximo livro para a leitura: {pilhaLivros.Peek()}");
+                System.Console.WriteLine($"{pilhaLivros.Pop()} lido com sucesso!");
+                System.Console.WriteLine($"Livros para a leitura: {pilhaLivros.Count}");
+            }
+
+                System.Console.WriteLine($"Livros para a leitura: {pilhaLivros.Count}");
+
+            // OperacoesLista opList = new OperacoesLista();
+            // List<string> estado = new List<string> {"SP", "MG", "BA"};
+            // string[] estadoArr = new string[2] {"SC", "MT"};
+
+            // // estado.Add("SP");
+            // // estado.Add("MG");
+            // // estado.Add("BA");
+
+            // System.Console.WriteLine("Quantidade de elementos da lista: {0}", estado.Count);
+
+            // opList.ImprimirListStr(estado);
+            // // System.Console.WriteLine("Removendo o elemento:");
+            // // estado.Remove("MG");
+
+            // // estado.AddRange(estadoArr); // Adiciona Elementos no final da coleção
+            // estado.Insert(1, "RJ");
+            // opList.ImprimirListStr(estado);
 
             // System.Console.WriteLine("Usando foreach:");
             // foreach (var item in estado)
