@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Colecoes.Helper;
 
 namespace Colecoes
@@ -10,11 +11,41 @@ namespace Colecoes
         static void Main(string[] args)
         {
 
-            Dictionary<string, string> estados = new Dictionary<string, string>();
+            int[] arrayNums = new int[9] {1, 4, 4, 5, 0, 8, 15, 15, 100};
 
-            estados.Add("SP", "São Paulo");
-            estados.Add("MG", "Minas Gerais");
-            estados.Add("BA", "Bahia");
+            var minimo = arrayNums.Min();
+            var maximo = arrayNums.Max();
+            var medio = arrayNums.Average();
+
+            System.Console.WriteLine($"Mímino: {minimo}");
+            System.Console.WriteLine($"Máximo: {maximo}");
+            System.Console.WriteLine($"Médio: {medio}");
+
+            var soma = arrayNums.Sum();
+            System.Console.WriteLine($"Soma: {soma}");
+            var arrayUnico = arrayNums.Distinct().ToArray();
+            System.Console.WriteLine($"Array original: {string.Join(", ", arrayNums)}");
+            System.Console.WriteLine($"Array distinct: {string.Join(", ", arrayUnico)}");
+
+
+            var numParesQuery = 
+                    from num in arrayNums
+                    where num % 2 == 0
+                    orderby num
+                    select num;
+
+            var numParesMetodos = arrayNums.Where(x => x % 2 == 0).OrderBy(x => x).ToList();
+
+            System.Console.WriteLine("Números pares query: " + string.Join(", ", numParesQuery));
+            System.Console.WriteLine("Números pares método: " + string.Join(", ", numParesMetodos));
+
+
+
+            // Dictionary<string, string> estados = new Dictionary<string, string>();
+
+            // estados.Add("SP", "São Paulo");
+            // estados.Add("MG", "Minas Gerais");
+            // estados.Add("BA", "Bahia");
             //estados.Add("MG", "");
 
             // foreach (KeyValuePair<string, string> item in estados)
@@ -32,7 +63,7 @@ namespace Colecoes
             //     System.Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
             // }
 
-            string valorProcurado = "BA";
+            // string valorProcurado = "BA";
 
             // System.Console.WriteLine("Valor original:");
             // System.Console.WriteLine(estados[valorProcurado]);
@@ -44,14 +75,14 @@ namespace Colecoes
 
             // var teste = estados["SC"];
 
-            if(estados.TryGetValue(valorProcurado, out string estadoEncontrado))
-            {
-                System.Console.WriteLine(estadoEncontrado);
-            }
-            else
-            {
-                System.Console.WriteLine($"Chave {valorProcurado} não existe no dicionário");
-            }
+            // if(estados.TryGetValue(valorProcurado, out string estadoEncontrado))
+            // {
+            //     System.Console.WriteLine(estadoEncontrado);
+            // }
+            // else
+            // {
+            //     System.Console.WriteLine($"Chave {valorProcurado} não existe no dicionário");
+            // }
 
             // Queue<string> fila = new Queue<string>();
 
